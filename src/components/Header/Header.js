@@ -4,6 +4,10 @@ import TokenService from '../../services/token-service'
 import './Header.css'
 
 export default class Header extends Component {
+    handleLogoutClick = () => {
+        TokenService.clearAuthToken()
+    }
+    
     renderLogoutLink = () => {
         return (
             <div className='header__logout'>

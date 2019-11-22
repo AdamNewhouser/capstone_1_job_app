@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Results.css'
 
-export default class Results extends Component {
-    render() {
-        return (
-
-            
-                <li className='results-item'>
-                    <Link className='link-container' to={'/listings/:listing.id'}>
-                    <h3>item-title</h3>
-                    <p>item-description</p>
-                    <p>Salary: item-pay</p>
+export default function Results(props) {
+    return (
+        props.listings.map(listing => {
+            return (
+                <li key={listing.id} className='results-item'>
+                    <Link className='link-container' to={`/listings/${listing.id}`}>
+                        <h3>{listing.company_name}</h3>
+                        <p>{listing.job_title}</p>
+                        <p>Salary: {listing.pay}</p>
                     </Link>
                 </li>
-           
-        )
-    }
-
+            )
+        })
+    )
 }
+
+

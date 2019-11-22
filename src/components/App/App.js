@@ -8,10 +8,14 @@ import ProfilePage from '../../routes/ProfilePage/ProfilePage'
 import ListingsPage from '../../routes/ListingsPage/ListingsPage'
 import ListingItem from '../../routes/ListingItem/ListingItem'
 
-
-
-
 class App extends Component {
+  state = { hasError: false }
+
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
+  }
+  
   render() {
   return (
     <div className='App'>
@@ -33,7 +37,7 @@ class App extends Component {
           component={LoginPage}
         />
         <Route
-          path={'/profiles/:profile.id'}
+          path={'/profiles/:profileId'}
           component={ProfilePage}
         />
         <Route
@@ -42,7 +46,7 @@ class App extends Component {
           component={ListingsPage}
         />
         <Route
-          path={'/listings/:listing.id'}
+          path={'/listings/:listingId'}
           component={ListingItem}
         />
       </main>

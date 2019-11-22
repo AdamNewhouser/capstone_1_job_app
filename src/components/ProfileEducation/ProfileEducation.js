@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ProfileEducation extends Component {
-    render() {
-        return (
-            <div className='Profile_education'>
-                <h3>Education</h3>
-                <h4>University Name</h4>
-                <p>Degree</p>
-                <p>Duration</p>
-            </div>
-        )
-    }
+export default function ProfileEducation(props) {
+    return (
+        <div className='Profile_education'>
+            <h3>Education</h3>
+            <h4>{props.profile.school_name}</h4>
+            <p>{props.profile.degree}</p>
+            <p>{props.profile.length_of_enrollment}</p>
+            <p>{props.profile.location}</p>
+        </div>
+    )
 }
+

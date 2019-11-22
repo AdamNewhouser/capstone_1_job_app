@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ProfileContact extends Component {
-    render() {
-        return (
-            <div className='Profile_contact'>
-                <h3>Contact</h3>
-                <h4>Phone: (555-555-5555)</h4>
-                <p>Email: (user@email.com)</p>
-            </div>
-        )
-    }
+export default function ProfileContact(props) {
+    const { email } = props.profile.email
+    const { phone } = props.profile.phone
+    return (
+        <div className='Profile_contact'>
+            <h3>Contact</h3>
+            <p>Phone: {phone}</p>
+            <p>Email: {email}</p>
+        </div>
+    )
 }
