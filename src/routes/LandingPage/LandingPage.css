@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+.landing-container {
+    text-align: center;
+    color: blue;
+}
+
+.a_landing {
+    color: blue;
+}

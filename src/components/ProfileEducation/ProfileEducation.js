@@ -1,8 +1,9 @@
 import React from 'react'
+import './ProfileEducation.css'
 
 export default function ProfileEducation(props) {
     return (
-        <div className='Profile_education'>
+        <div className='profile_education'>
             <h3>Education</h3>
             <h4>{props.profile.school_name}</h4>
             <p>{props.profile.degree}</p>

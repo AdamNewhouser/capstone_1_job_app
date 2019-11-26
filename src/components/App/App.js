@@ -7,14 +7,19 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 import ProfilePage from '../../routes/ProfilePage/ProfilePage'
 import ListingsPage from '../../routes/ListingsPage/ListingsPage'
 import ListingItem from '../../routes/ListingItem/ListingItem'
+import NewListingPage from '../../routes/NewListingPage/NewListingPage'
+
 
 class App extends Component {
-  state = { hasError: false }
+  state = { 
+    hasError: false,
+  }
 
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
   }
+  
   
   render() {
   return (
@@ -34,7 +39,7 @@ class App extends Component {
         />
         <Route 
           path={'/login'}
-          component={LoginPage}
+          render={ props => <LoginPage {...props} />}
         />
         <Route
           path={'/profiles/:profileId'}
@@ -49,6 +54,10 @@ class App extends Component {
           path={'/listings/:listingId'}
           component={ListingItem}
         />
+        <Route
+          path={'/new_listing'}
+          render={ props => <NewListingPage {...props} />}
+        ></Route>
       </main>
     </div>
   );

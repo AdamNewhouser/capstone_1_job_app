@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    height: 100px;
+    line-height: 1.7;
+}
+
+h1 {
+    margin: 0;
+}
+
+.a_log {
+    color: white;
+    text-decoration: none;
+}
+
+.header__logout {
+    display: flex;
+    justify-content: space-evenly;
+}

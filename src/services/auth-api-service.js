@@ -15,9 +15,6 @@ const AuthApiService = {
                     : res.json()
                 )
     },
-    getProfileIdByEmail(email) {
-        return fetch(`${config.API_ENDPOINT}/`)
-    }
 }
 
 export default AuthApiService
