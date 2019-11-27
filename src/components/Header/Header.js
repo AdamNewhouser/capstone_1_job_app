@@ -42,7 +42,7 @@ export default class Header extends Component {
         return (
             <nav className='header'>
                 <h1>
-                    <Link to='/'>Job App</Link>
+                    <Link to='/' className='header_title'>Job App</Link>
                 </h1>
                 <span className='header__tagline'>Network, Search Listings, One-Click Apply!</span>
                 {TokenService.hasAuthToken() ? this.renderLogoutLink() : this.renderLoginLink()}

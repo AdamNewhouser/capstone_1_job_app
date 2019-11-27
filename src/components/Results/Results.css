@@ -1,6 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.results-item {
+    margin: 20px 0;
+}
+
 .link-container {
     border: 1px solid black;
     width: 100%;
-    padding: 10px;
     display: block;
+    text-decoration: none;
+
 }
+
+.list {
+    height: 20%;
+    margin: 10px auto;
+}
+
+.list_company {
+    margin: 0 auto;
+    background-color: blueviolet;
+}
+

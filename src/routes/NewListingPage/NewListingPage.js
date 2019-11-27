@@ -7,7 +7,7 @@ export default class CreateListingPage extends Component {
         return (
             <div className='CreateListingPage'>
                 <h2>Create New Listing</h2>
-                <NewListingForm props={this.props}/>
+                <NewListingForm {...this.props}/>
             </div>
         )
     }

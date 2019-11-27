@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.ListingsPage {
+    text-align: center;
+}
+
+#ListingsPage__search_jobs {
+    display: block;
+    margin: 10px auto;
+}
+
+ul {
+    width: 80%;
+    margin: auto;
+    list-style-type: none;
+    padding: 0;
+}

@@ -25,10 +25,8 @@ export default class NewListingForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const newListing = this.state
-        const userId = this.context.userId
         console.log(newListing)
         ListingApiService.postNewListing(newListing)
-            .then(res => console.log(res))
             .then(res => this.props.history.push(`/listings/${res.id}`))
     }
 

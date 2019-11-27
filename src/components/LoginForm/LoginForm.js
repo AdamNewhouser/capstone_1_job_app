@@ -12,9 +12,7 @@ export default class LoginForm extends Component {
     static contextType = ProfileContext
 
     setToProfile = res => {
-        console.log(res)
         this.context.setProfile(res)
-        console.log(this.context.profile)
         this.props.history.push(`/profiles/${this.context.profile.id}`)
     }
 
@@ -26,13 +24,12 @@ export default class LoginForm extends Component {
             password: password.value
         })
             .then(res => {
-                console.log(res)
                 email.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
                 this.context.setUserType(res.user_type)
                 this.context.setUserId(res.userId)
-                ProfileApiService.getProfile(res.userId)
+                ProfileApiService.getProfile(res.userId, res.user_type)
                     .then(res => this.setToProfile(res))
                 
             })
@@ -52,7 +49,7 @@ export default class LoginForm extends Component {
                 </div>
                 <div className='password'>
                     <label htmlFor='LoginForm__password'>Password</label>
-                    <input required type='password' name='password' id='LoginForm__password' required></input>
+                    <input type='password' name='password' id='LoginForm__password' required></input>
                 </div>
                 <button type='submit' >Login</button>
             </form>
