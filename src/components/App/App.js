@@ -8,6 +8,7 @@ import ProfilePage from '../../routes/ProfilePage/ProfilePage'
 import ListingsPage from '../../routes/ListingsPage/ListingsPage'
 import ListingItem from '../../routes/ListingItem/ListingItem'
 import NewListingPage from '../../routes/NewListingPage/NewListingPage'
+import WelcomePage from '../../routes/WelcomePage/WelcomePage'
 
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
         />
         <Route 
           path={'/registration'}
-          component={RegistrationPage}
+          render={ props => <RegistrationPage {...props} />}
         />
         <Route 
           path={'/login'}
@@ -57,7 +58,11 @@ class App extends Component {
         <Route
           path={'/new_listing'}
           render={ props => <NewListingPage {...props} />}
-        ></Route>
+        />
+        <Route
+          path={'/welcome'}
+          render={ props => <WelcomePage {...props} />}
+        />  
       </main>
     </div>
   );

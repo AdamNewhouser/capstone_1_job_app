@@ -6,7 +6,7 @@ export default class RegistrationPage extends Component {
         return (
             <div className='RegistrationPage'>
                 <h2>Register</h2>
-                <RegistrationForm />
+                <RegistrationForm {...this.props} />
             </div>
         )
     }
