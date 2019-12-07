@@ -5,6 +5,7 @@ import ListingApiService from '../../services/listing-api-service'
 import ProfileContext from '../../contexts/ProfileContext'
 import './ListingsPage.css'
 import ValidationError from '../../components/ValidationError/ValidationError'
+import LoginPage from'../LoginPage/LoginPage'
 
 export default function ListingsPage(props) {
     const context = useContext(ProfileContext)
@@ -49,10 +50,9 @@ export default function ListingsPage(props) {
     const renderCandidateListingsPage = () => {
         return (
             <div className='ListingsPage'>
-                <h2>Job Listings</h2>
+                <h2 className='list-page_title'>Job Listings</h2>
                 <form className='search_form' onSubmit={(e) => handleSubmit(e)}>
-                    <label className='search_label' htmlFor='ListingsPage__search_jobs'>Search jobs by keyword</label>
-                    <input onChange={(e) => updateCurrentKeyword(e.target.value)} name='search_jobs' type='text' id='ListingsPage__search_jobs' value={currentKeyword} required></input>
+                    <input onChange={(e) => updateCurrentKeyword(e.target.value)} name='search_jobs' type='text' id='ListingsPage__search_jobs' value={currentKeyword} placeholder='Search jobs by keyword' required></input>
                     {touched && <ValidationError message={validateKeyword()} />}
                     <button type='submit' className='search_button' disabled={validateKeyword()}>Search</button>
                 </form>
@@ -66,11 +66,12 @@ export default function ListingsPage(props) {
     const renderEmployerListingsPage = () => {
         return (
             <div className='ListingsPage'>
-                <h2>Job Listings</h2>
-                <Link to={'/new_listing'}>Create a new listing</Link>
-                <form className='search_form'>
-                    <label className='search_label' htmlFor='ListingsPage__search_jobs'>Search jobs by keyword</label>
-                    <input onChange={(e) => updateCurrentKeyword(e.target.value)} name='search_jobs' type='text' id='ListingsPage__search_jobs' value={currentKeyword} required></input>
+                <h2 className='list-page_title'>Job Listings</h2>
+                <Link to={'/new_listing'} >
+                    <button className='new-list-link'>Create a new listing!</button>
+                </Link>
+                <form className='search_form' onSubmit={(e) => handleSubmit(e)}>
+                    <input onChange={(e) => updateCurrentKeyword(e.target.value)} name='search_jobs' type='text' id='ListingsPage__search_jobs' value={currentKeyword} placeholder='Search jobs by keyword' required></input>
                     {touched && <ValidationError message={validateKeyword()} />}
                     <button type='submit' className='search_button' disabled={validateKeyword()}>Search</button>
                 </form>
@@ -80,7 +81,7 @@ export default function ListingsPage(props) {
             </div>
         )
     }
-    let content
+    let content = <LoginPage />
     if (error) {
         content =
             error.error === `Listing doesn't exist` ? (
@@ -92,6 +93,7 @@ export default function ListingsPage(props) {
         if (context.userType === 'employer') {
             content = renderEmployerListingsPage()
         } else {
+        if (context.userType === 'candidate')
             content = renderCandidateListingsPage()
         }
     }

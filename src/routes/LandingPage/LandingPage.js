@@ -6,9 +6,13 @@ class LandingPage extends Component {
     render() {
         return (
             <div className='landing-container'>
-                <h2 className='landing-title'>Job App</h2>
-                <p className='landing-tag'>A place to network and find your next career!</p>
-                <Link to='/registration' className='a_landing'>Create an Account</Link>
+                <div className='content-container'>
+                <h2 className='landing-title'>Welcome to the Job App</h2>
+                <p className='landing-tag'>Build your profile and find your next career!</p>
+                <Link to='/registration'>
+                    <button type='button' className='create_acct'>Create an account!</button>    
+                </Link>
+                </div>
             </div>
         )
     }

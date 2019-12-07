@@ -1,0 +1,74 @@
+.ListingItem {
+    width: 90%;
+    margin: 20px auto;
+    padding: 0 5px 15px;
+    background-color: #F4BB4B;
+    color: black;
+    border-radius: 20px;
+    line-height: 1.7;
+}
+
+.list_company_name {
+    margin: 10px 10px 5px;
+    padding: 20px 15px 0;
+    color: purple;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.list_job_title {
+    margin: 0 10px;
+    padding: 0 15px 0;
+    color: purple;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.p_location {
+    margin: 5px 10px 30px;
+    padding: 0 15px 0;
+}
+
+.p_description {
+    margin: 5px 15px 20px;
+    padding: 0 15px 0;
+}
+
+.p_required {
+    margin: 5px 15px 20px;
+    padding: 0 15px 0;
+}
+
+.p_bonus {
+    margin: 5px 15px 20px;
+    padding: 0 15px 0;
+}
+.h4 {
+    margin: 5px 15px 5px;
+    text-decoration: underline;
+    padding: 0 10px 0;
+    color: purple;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.list_salary {
+    text-decoration: none;
+}
+
+.list_listed {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-shadow: none;
+    font-weight: lighter;
+}
+
+.apply_button {
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    background-color: purple;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+}

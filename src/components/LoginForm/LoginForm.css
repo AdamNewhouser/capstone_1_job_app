@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+#LoginForm__email {
+    margin: 10px;
+    padding: 3px;
+}
+
+#LoginForm__password {
+    margin: 10px;
+    padding: 3px;
+}
+
+.log_button {
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    background-color: purple;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.to_register {
+    font-size: .8em;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.signup_question {
+    margin-right: 3px;
+}
+
+@media (min-width: 700px) {
+    #LoginForm__email {
+        width: 60%;
+    }
+
+    #LoginForm__password {
+        width: 60%;
+    }
+}

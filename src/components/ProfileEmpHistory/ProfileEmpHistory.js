@@ -3,8 +3,8 @@ import './ProfileEmpHistory.css'
 
 export default function ProfileEmpHistory(props) {
     return (
-        <div className='Profile_education'>
-            <h3>Employment History</h3>
+        <div className='profile_employment'>
+            <h3 className='emp_title'>Employment History</h3>
             <h4>{props.profile.company_name}</h4>
             <p className='emp emp_job_title'>{props.profile.job_title}</p>
             <p className='emp emp_length'>{props.profile.length_of_duty}</p>

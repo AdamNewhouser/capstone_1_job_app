@@ -6,21 +6,25 @@
     margin: 20px 0;
 }
 
-.link-container {
+.results-link-container {
     border: 1px solid black;
     width: 100%;
     display: block;
     text-decoration: none;
-
+    background-color: #F4BB4B;
+    color: black;
+    border-radius: 10px;
 }
 
-.list {
+.results {
     height: 20%;
     margin: 10px auto;
 }
 
-.list_company {
-    margin: 0 auto;
+.results_company {
+    margin: 0 auto; 
     background-color: blueviolet;
+    color: white;
+    border-radius: 9px 9px 0 0;
 }
 

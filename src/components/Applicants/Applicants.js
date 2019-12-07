@@ -8,9 +8,13 @@ export default function Applicants(props) {
     const [error, setError] = useState(null)
 
     useEffect(() => {
+        console.log(props.applicants)
         props.applicants.forEach(applicant => {
-            ProfileApiService.getProfile(applicant.profile_id)
-                .then(res => setProfiles([...profiles, res]))
+            ProfileApiService.getMicroProfile(applicant.profile_id)
+                .then(res => {
+                    console.log(res)
+                    setProfiles([...profiles, res])
+                })
                 .catch(setError)
         })
     }, [profileId])
@@ -35,7 +39,7 @@ export default function Applicants(props) {
         content =
             error.error === `No applicants exist` 
             ? (<p>No one has applied</p>) 
-            : (<p>There was an error</p>)
+            : (<p>Cannot provide applicants at this time</p>)
     } else {
         content = renderApplicants()
     }

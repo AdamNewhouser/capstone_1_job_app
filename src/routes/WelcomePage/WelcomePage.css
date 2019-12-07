@@ -1,0 +1,33 @@
+.WelcomePage {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px 30px;
+    background-color: #00A7E1;
+    border-radius: 20px;
+    line-height: 1.5;
+    color: purple;
+}
+
+.wel_input {
+    width: 280px;
+    margin: 5px 0;
+    padding: 3px
+}
+
+.wel_button {
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    background-color: purple;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.welcome_explain {
+    color: black;
+    font-size: 1.1em;
+}
+

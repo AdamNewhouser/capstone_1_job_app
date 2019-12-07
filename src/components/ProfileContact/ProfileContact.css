@@ -6,3 +6,23 @@
     height: 30px;
     margin: 20px auto;
 }
+
+.con_title {
+    width: 100%;
+    color: white;
+    margin: 0px auto;
+    background-color: #00A7E1
+}
+
+@media (min-width: 700px) {
+    .Profile_contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .con_phone {
+        width: 40%;
+        margin: 20px 0; 
+    }
+}

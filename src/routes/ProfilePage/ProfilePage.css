@@ -8,15 +8,16 @@
     font-size: 1.3em;
 }
 
-h2 {
+.pro_name {
     font-size: 2.5em;
-    margin: 15px auto 10px;
+    margin: 5px auto 0;
 }
 
 .profile__image {
     width: 250px;
     height: 275px;
     margin: 20px auto 0;
+    background-size: contain;
 }
 
 .profile__personal {
@@ -27,11 +28,46 @@ h2 {
     font-size: .9em;
     width: 85%;
     height: 110px;
-    margin: 10px auto 30px;
+    margin: 0 auto 10px;
 }
 
 .pro_industry {
     font-size: .9em;
     height: 50px;
-    margin: 10px auto 30px;
+    margin: 0px auto 30px;
+}
+
+.pro_my_listings {
+    width: 100%;
+    color: white;
+    margin: 0px auto;
+    background-color: #00A7E1
+}
+
+@media (min-width: 700px) {
+    .profile__container {
+        width: 80%;
+        height: 950px;
+        margin: 50px auto;
+        background-color: lightgrey;
+        border-radius: 40px;
+        padding-bottom: 10px;
+    }
+
+    .profile__personal {
+        width: 50%;
+        margin: auto 100px;
+        padding: 10px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .pro_industry {
+        margin: 0 0 0 0;
+    }
+
+    .pro_tag {
+        height: 80px;
+    }
+
 }

@@ -17,3 +17,31 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+
+.list-page_title {
+    color: #00A7E1;
+    
+}
+
+#ListingsPage__search_jobs {
+    padding: 3px;
+}
+
+.new-list-link {
+    background-color: purple;
+    color: white;
+    margin: 0 auto 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-weight: bolder;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.search_button {
+    background-color: #00A7E1;
+    color: white;
+    border: 1px solid #323232;
+    font-weight: bolder;
+    padding: 3px 8px;
+}

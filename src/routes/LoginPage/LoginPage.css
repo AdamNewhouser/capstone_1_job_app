@@ -1,7 +1,35 @@
-* {
-    box-sizing: border-box;
-}
-
 .LoginPage {
     text-align: center;
+    height: 60vh;
+}
+
+.log_title {
+    color: #00A7E1;
+    font-size: 6vw;
+}
+
+.login_form_container {
+    margin: auto;
+    width: 100%;
+}
+
+@media (min-width: 700px) {
+    .LoginPage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login_form_container {
+        width: 420px
+    }
+
+    .log_title {
+        font-size: 3em;
+    }
+
+}
+
+@media (min-width: 800px) {
+   
 }

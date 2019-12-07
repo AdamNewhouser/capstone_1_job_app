@@ -1,0 +1,15 @@
+.newlisting_submit {
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    background-color: purple;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.newlist_input {
+    width: 200px;
+    margin: 10px;
+    padding: 3px;
+}

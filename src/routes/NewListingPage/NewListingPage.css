@@ -1,0 +1,11 @@
+.NewListingPage {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0 0;
+    text-align: center;
+}
+
+.newlistPage_title {
+    color: #00A7E1;
+    margin-bottom: 15px;
+}

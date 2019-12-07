@@ -13,27 +13,34 @@ export default class Header extends Component {
 
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        this.context.clearAuthToken()
         this.setState({ toggleLogging: false })
     }
-    
+
     handleLoginClick = () => {
         this.setState({ toggleLogging: true })
     }
-    
+
     renderLogoutLink = () => {
         return (
             <div className='header__logout'>
-                <Link onClick={this.handleLogoutClick} to='/' className='a_log'>Logout</Link>
-                <Link to='/listings' className='a_log'>Listings</Link>
-                <Link to={`/profiles/${this.context.userId}`} className='a_log'>My Profile</Link>
+                <Link onClick={this.handleLogoutClick} to='/'>
+                    <button type='button' className='a_log logout'>Logout</button>
+                </Link>
+                <Link to='/listings'>
+                    <button type='button' className='a_log listings'>Listings</button>
+                </Link>
+                <Link to={`/profiles/${this.context.profile.id}`} >
+                    <button type='button' className='a_log myprofile'>My Profile</button>
+                </Link>
             </div>
         )
     }
-    
+
     renderLoginLink = () => {
         return (
             <div className='header__login'>
-                <Link to='/login' className='a_log'>Log in</Link>
+                <Link to='/login' className='a_log login'>Login</Link>
             </div>
         )
     }
@@ -41,11 +48,13 @@ export default class Header extends Component {
     render() {
         return (
             <nav className='header'>
-                <h1>
-                    <Link to='/' className='header_title'>Job App</Link>
-                </h1>
-                <span className='header__tagline'>Network, Search Listings, One-Click Apply!</span>
-                {TokenService.hasAuthToken() ? this.renderLogoutLink() : this.renderLoginLink()}
+                <div className='header-container'>
+                    <Link to='/' className='header_title'>
+                        <h1 className='header_h1'>Job App</h1>
+                    </Link>
+                    <div className='header__tagline'>Network, Search Listings, One-Click Apply!</div>
+                    {this.context.authToken ? this.renderLogoutLink() : this.renderLoginLink()}
+                </div>
             </nav>
         )
     }

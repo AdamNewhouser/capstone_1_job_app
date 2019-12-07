@@ -11,10 +11,10 @@ export default function Results(props) {
             props.listings.map(listing => {
                 return (
                     <li key={listing.id} className='results-item'>
-                        <Link className='link-container' to={`/listings/${listing.id}`}>
-                            <h3 className='list list_company'>{listing.company_name}</h3>
-                            <p className='list list_job_title'>{listing.job_title}</p>
-                            <p className='list list_salary'>Salary: {listing.pay}</p>
+                        <Link className='results-link-container' to={`/listings/${listing.id}`}>
+                            <h3 className='results results_company'>{listing.company_name}</h3>
+                            <p className='results results_job_title'>{listing.job_title}</p>
+                            <p className='results results_salary'>Salary: {listing.pay}</p>
                         </Link>
                     </li>
                 )
@@ -27,10 +27,10 @@ export default function Results(props) {
             props.listings.map(listing => {
                 return (
                     <li key={listing.id} className='results-item'>
-                        <Link className='link-container' to={`/listings/${listing.id}`}>
-                            <h3 className='list list_company'>{listing.company_name}</h3>
-                            <p className='list list_job_title'>{listing.job_title}</p>
-                            <p className='list list_salary'>Salary: {listing.pay}</p>
+                        <Link className='results-link-container' to={`/listings/${listing.id}`}>
+                            <h3 className='results results_company'>{listing.company_name}</h3>
+                            <p className='results results_job_title'>{listing.job_title}</p>
+                            <p className='results results_salary'>Salary: {listing.pay}</p>
                         </Link>
                     </li>
                 )

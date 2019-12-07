@@ -62,7 +62,7 @@ class App extends Component {
         <Route
           path={'/welcome'}
           render={ props => <WelcomePage {...props} />}
-        />  
+        />
       </main>
     </div>
   );
