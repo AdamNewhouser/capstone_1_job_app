@@ -55,7 +55,7 @@ export default class LoginForm extends Component {
         return (
             <form className='LoginForm' onSubmit={(e) => this.handleSubmitJwtAuth(e)}>
                 <div className="email">
-                    <input required type='text' name='email' id='LoginForm__email' placeholder='Email' required></input>
+                    <input type='text' name='email' id='LoginForm__email' placeholder='Email' required></input>
                 </div>
                 <div className='password'>
                     <input type='password' name='password' id='LoginForm__password' placeholder='Password' required></input>

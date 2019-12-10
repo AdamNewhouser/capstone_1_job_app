@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export const nullProfile = {
     id: null,
     name: "",
@@ -46,7 +47,7 @@ export default ProfileContext
 
 export class ProfileProvider extends Component {
     state = {
-        profile: { id: 1},
+        profile: nullProfile,
         image: '',
         userId: null,
         userType: 'candidate',

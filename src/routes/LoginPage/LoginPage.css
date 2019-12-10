@@ -1,6 +1,6 @@
 .LoginPage {
     text-align: center;
-    height: 60vh;
+    height: 80vh;
 }
 
 .log_title {
@@ -13,6 +13,17 @@
     width: 100%;
 }
 
+.demo_span {
+    display: block;
+    width: 15%;
+    min-width: 280px;
+    margin: auto;
+}
+
+.demo_candidate {
+    text-decoration: underline;
+    margin: 15px auto 10px; 
+}
 @media (min-width: 700px) {
     .LoginPage {
         display: flex;

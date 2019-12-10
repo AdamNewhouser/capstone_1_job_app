@@ -1,5 +1,6 @@
 .ListingItem {
     width: 90%;
+    max-width: 680px;
     margin: 20px auto;
     padding: 0 5px 15px;
     background-color: #F4BB4B;

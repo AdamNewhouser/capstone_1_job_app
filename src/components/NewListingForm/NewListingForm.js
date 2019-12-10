@@ -63,25 +63,25 @@ export default class NewListingForm extends Component {
         return (
             <form className='NewListingForm' onSubmit={(e) => this.handleSubmit(e)}>
                 <div className='company_name'>
-                    <input onChange={(e) => this.updateCompanyName(e.target.value)} required type='text' name='company_name' id="NewListingForm__company_name" placeholder='Company Name' className='newlist_input' required></input>
+                    <input onChange={(e) => this.updateCompanyName(e.target.value)} type='text' name='company_name' id="NewListingForm__company_name" placeholder='Company Name' className='newlist_input' required></input>
                 </div>
                 <div className='location'>
-                    <input onChange={(e) => this.updateLocation(e.target.value)} required type='text' name='location' id="NewListingForm__location" placeholder='Location (City, State)' className='newlist_input' required></input>
+                    <input onChange={(e) => this.updateLocation(e.target.value)} type='text' name='location' id="NewListingForm__location" placeholder='Location (City, State)' className='newlist_input' required></input>
                 </div>
                 <div className='job_title'>
-                    <input onChange={(e) => this.updateJobTitle(e.target.value)} required type='text' name='job_title' id="NewListingForm__job_title" placeholder='Job Title' className='newlist_input' required></input>
+                    <input onChange={(e) => this.updateJobTitle(e.target.value)} type='text' name='job_title' id="NewListingForm__job_title" placeholder='Job Title' className='newlist_input' required></input>
                 </div>
                 <div className='job_description'>
-                    <textarea onChange={(e) => this.updateJobDescription(e.target.value)} required type='text' name='job_description' id="NewListingForm__job_description" placeholder='Job Description' className='newlist_input' required></textarea>
+                    <textarea onChange={(e) => this.updateJobDescription(e.target.value)} type='text' name='job_description' id="NewListingForm__job_description" placeholder='Job Description' className='newlist_input' required></textarea>
                 </div>
                 <div className='pay'>
-                    <input onChange={(e) => this.updatePay(e.target.value)} required type='text' name='pay' id="NewListingForm__pay" placeholder='Pay (/hour or /year)' className='newlist_input' required></input>
+                    <input onChange={(e) => this.updatePay(e.target.value)} type='text' name='pay' id="NewListingForm__pay" placeholder='Pay (/hour or /year)' className='newlist_input' required></input>
                 </div>
                 <div className='required_skills'>
-                    <textarea onChange={(e) => this.updateRequired(e.target.value)} required type='text' name='required_skills' id="NewListingForm__required_skills" placeholder='Required Experience/Skills' className='newlist_input' required></textarea>
+                    <textarea onChange={(e) => this.updateRequired(e.target.value)} type='text' name='required_skills' id="NewListingForm__required_skills" placeholder='Required Experience/Skills' className='newlist_input' required></textarea>
                 </div>
                 <div className='additional_skills'>
-                    <textarea onChange={(e) => this.updateAdditional(e.target.value)} required type='text' name='additional_skills' id="NewListingForm__additional_skills" placeholder='Bonus Experience/Skills' className='newlist_input' required></textarea>
+                    <textarea onChange={(e) => this.updateAdditional(e.target.value)} type='text' name='additional_skills' id="NewListingForm__additional_skills" placeholder='Bonus Experience/Skills' className='newlist_input' required></textarea>
                 </div>
                 <button type='submit' className='newlisting_submit'>Submit</button>
             </form>

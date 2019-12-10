@@ -41,23 +41,26 @@
     width: 100%;
     color: white;
     margin: 0px auto;
+    text-align: center;
     background-color: #00A7E1
 }
 
 @media (min-width: 700px) {
     .profile__container {
-        width: 80%;
-        height: 950px;
-        margin: 50px auto;
+        width: 90%;
+        max-width: 740px;
+        height: 660px;
+        margin: 100px auto;
         background-color: lightgrey;
         border-radius: 40px;
         padding-bottom: 10px;
+        text-align: left;
     }
 
     .profile__personal {
         width: 50%;
-        margin: auto 100px;
-        padding: 10px;
+        margin: 5px 5px 5px 5px;
+        padding: 1px;
         text-align: center;
         display: inline-block;
     }
@@ -67,7 +70,24 @@
     }
 
     .pro_tag {
-        height: 80px;
+        height: 110px;
     }
 
+    .profile_info_container {
+        width: 40%;
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: top;
+        margin: 26px 0;
+    }
+
+    .profile__image {
+        margin-bottom: 25px;
+    }
+
+    .pro_name {
+        margin: 30px auto 50px;
+    }
+
+    
 }

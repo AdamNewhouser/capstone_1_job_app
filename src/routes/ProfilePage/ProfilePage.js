@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react'
 import ProfileEducation from '../../components/ProfileEducation/ProfileEducation'
 import ProfileEmpHistory from '../../components/ProfileEmpHistory/ProfileEmpHistory'
 import ProfileContact from '../../components/ProfileContact/ProfileContact'
-import ProfileApiService from '../../services/profile-api-service'
 import ProfileContext from '../../contexts/ProfileContext'
 import EmployerListings from '../../components/EmployerListings/EmployerListings'
 import './ProfilePage.css'
@@ -12,7 +11,7 @@ import LoginPage from '../LoginPage/LoginPage'
 
 export default function ProfilePage(props) {
     const context = useContext(ProfileContext)
-    const [profile, setProfile] = useState({ id: null })
+    const [profile] = useState({ id: null })
     const [profileId] = useState(props.match.params.profileId)
     const [listings, setListings] = useState([])
     const [error, setError] = useState(null)
@@ -23,14 +22,6 @@ export default function ProfilePage(props) {
                 .then(setListings)
                 .catch(setError)
         }
-        // ProfileApiService.getProfile(context.profile.id, context.userId, context.userType)
-        //     .then(res => {
-        //         console.log(res)
-        //     })
-        //     .catch(setError)
-        // return () => {
-        //     setProfile({ id: null })
-        // }
     }, [profileId])
 
 
@@ -52,9 +43,11 @@ export default function ProfilePage(props) {
                                 <p className='pro pro_tag'>{context.profile.profile_tag}</p>
                                 <p className='pro pro_industry'>Job Field: {context.profile.primary_industry}</p>
                             </div>
-                            <ProfileEducation profile={context.profile} />
-                            <ProfileEmpHistory profile={context.profile} />
-                            <ProfileContact profile={context.profile} />
+                            <div className='profile_info_container'>
+                                <ProfileEducation profile={context.profile} />
+                                <ProfileEmpHistory profile={context.profile} />
+                                <ProfileContact profile={context.profile} />
+                            </div>
                         </div>
                     </div>
                 </ProfileContext.Provider>
@@ -80,8 +73,10 @@ export default function ProfilePage(props) {
                             <p className='pro pro_tag'>{context.profile.profile_tag}</p>
                             <p className='pro pro_industry'>Industry: {context.profile.primary_industry}</p>
                         </div>
+                        <div className='profile_info_container'>
                         <h3 className='pro_my_listings'>My Listings</h3>
                         <EmployerListings listings={listings} />
+                        </div>
                     </div>
                 </ProfileContext.Provider>
             )

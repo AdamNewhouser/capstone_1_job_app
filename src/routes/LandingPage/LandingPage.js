@@ -12,6 +12,7 @@ class LandingPage extends Component {
                 <Link to='/registration'>
                     <button type='button' className='create_acct'>Create an account!</button>    
                 </Link>
+                <Link to='/login' className='try_out'>Try out the app! Demo credentials on the login page</Link>
                 </div>
             </div>
         )

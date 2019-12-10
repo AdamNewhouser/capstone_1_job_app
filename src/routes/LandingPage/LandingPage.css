@@ -37,6 +37,10 @@
     background-color: white;
 }
 
+.try_out {
+    display: block;
+    margin: 20px;
+}
 @media (min-width: 700px) {
     .landing-container {
         display: flex;
