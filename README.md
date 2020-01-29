@@ -1,6 +1,7 @@
 ## Job App
 
 live-app: https://job-app.adamnewhouser.now.sh
+server repo: https://github.com/AdamNewhouser/capstone_1_job_app_api
 
 Demo Accounts:
 
