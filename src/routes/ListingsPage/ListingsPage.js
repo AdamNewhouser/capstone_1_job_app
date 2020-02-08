@@ -25,7 +25,6 @@ export default function ListingsPage(props) {
     const updateCurrentKeyword = (keyword) => {
         setCurrentKeyword(keyword.toLowerCase())
         setTouched(true)
-        console.log(listings)
     }
 
     const validateKeyword = () => {

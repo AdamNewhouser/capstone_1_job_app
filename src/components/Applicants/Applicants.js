@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import ProfileApiService from '../../services/profile-api-service'
+import ProfileFromListings from '../../routes/ProfileFromListings/ProfileFromListings'
+import './Applicants.css'
 
 export default function Applicants(props) {
     const [profiles, setProfiles] = useState([])
@@ -8,27 +9,29 @@ export default function Applicants(props) {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        console.log(props.applicants)
         props.applicants.forEach(applicant => {
-            ProfileApiService.getMicroProfile(applicant.profile_id)
+            ProfileApiService.getMicroProfile(applicant.profile_id, props.listing.id)
                 .then(res => {
-                    console.log(res)
                     setProfiles([...profiles, res])
                 })
                 .catch(setError)
         })
     }, [profileId])
 
+    const renderApplicantProfile = (profile) => {
+        props.history.push(`/applicant_profiles/${profile.id}`)
+    }
+
     const renderApplicants = () => {
         return (
             profiles.map(profile => {
                 return (
-                    <li key={profile.id} className='applicant-results'>
-                        <Link className='link-container' to={`/profiles/${profile.id}`}>
+                    <li key={profile.id} className='applicant-results' onClick={() => renderApplicantProfile(profile)}>
+                        <div className='link-container'>
                             <h3 className='applicant applicant_name'>{profile.name}</h3>
                             <p className='applicant applicant_tag'>{profile.profile_tag}</p>
                             <p className='applicant applicant_industry'>Field: {profile.primary_industry}</p>
-                        </Link>
+                        </div>
                     </li>
                 )
             })

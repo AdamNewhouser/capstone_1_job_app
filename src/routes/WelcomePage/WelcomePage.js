@@ -23,7 +23,6 @@ export default class WelcomePage extends Component {
 
     handleSubmitCandidateSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.profile)
         ProfileApiService.postProfile(this.state.profile)
             .then(profile => {
                 this.setState({
@@ -44,11 +43,9 @@ export default class WelcomePage extends Component {
                                     user_id: this.context.userId
                                 })
                                     .then(res => {
-                                        console.log(res)
                                         this.context.setImage(res.image_url)
                                         ProfileApiService.getProfile(res.user_id, this.context.userId, this.context.userType)
                                             .then(res => {
-                                                console.log(res)
                                                 this.context.setProfile(res.profile)
                                                 this.props.history.push(`/profiles/${res.profile.id}`)
                                             })

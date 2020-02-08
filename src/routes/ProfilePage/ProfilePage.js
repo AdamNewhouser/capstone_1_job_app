@@ -15,6 +15,7 @@ export default function ProfilePage(props) {
     const [profileId] = useState(props.match.params.profileId)
     const [listings, setListings] = useState([])
     const [error, setError] = useState(null)
+    const [expandPersonal, setExpandPersonal] = useState(false)
 
     useEffect(() => {
         if (context.userType === 'employer') {
@@ -31,7 +32,6 @@ export default function ProfilePage(props) {
             error: error
         }
         const viewPoint = context.userType
-        console.log(context.authToken)
         if (viewPoint === 'candidate') {
             return (
                 <ProfileContext.Provider value={value}>

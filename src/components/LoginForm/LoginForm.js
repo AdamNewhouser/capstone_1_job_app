@@ -14,7 +14,6 @@ export default class LoginForm extends Component {
     static contextType = ProfileContext
 
     setToProfile = res => {
-        console.log(res['0'].image_url)
         this.context.setProfile(res.profile)
         this.context.setImage(res['0'].image_url)
         this.props.history.push(`/profiles/${this.context.profile.id}`)
@@ -28,15 +27,14 @@ export default class LoginForm extends Component {
             password: password.value
         })
             .then(res => {
-                email.value = ''
-                password.value = ''
                 TokenService.saveAuthToken(res.authToken)
                 this.context.setAuthToken(res.authToken)
                 this.context.setUserType(res.user_type)
                 this.context.setUserId(res.userId)
+                email.value = ''
+                password.value = ''
                 ProfileApiService.getProfileAfterLogin(res.userId, res.user_type)
                     .then(res => {
-                        console.log(this.context.authToken)
                         ProfileApiService.getProfile(res.profile.id, this.context.userId, this.context.userType)
                             .then(res => {
                                 this.setToProfile(res)

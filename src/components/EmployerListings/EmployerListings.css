@@ -1,0 +1,6 @@
+.EmployerListings__list {
+    max-height: 580px !important;
+    overflow-y: scroll;
+    width: 100%;
+}
+

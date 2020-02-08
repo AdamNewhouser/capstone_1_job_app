@@ -1,0 +1,12 @@
+.applicant-results {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #323232;
+    color: white;
+    margin: 10px;
+}
+
+.applicant {
+    margin: 5px 10px;
+}

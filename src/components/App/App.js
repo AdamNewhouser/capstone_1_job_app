@@ -9,6 +9,7 @@ import ListingsPage from '../../routes/ListingsPage/ListingsPage'
 import ListingItem from '../../routes/ListingItem/ListingItem'
 import NewListingPage from '../../routes/NewListingPage/NewListingPage'
 import WelcomePage from '../../routes/WelcomePage/WelcomePage'
+import ProfileFromListings from '../../routes/ProfileFromListings/ProfileFromListings'
 
 
 class App extends Component {
@@ -62,6 +63,10 @@ class App extends Component {
         <Route
           path={'/welcome'}
           render={ props => <WelcomePage {...props} />}
+        />
+        <Route 
+          path={'/applicant_profiles/:profileId'}
+          render={ props => <ProfileFromListings {...props} />}
         />
       </main>
     </div>

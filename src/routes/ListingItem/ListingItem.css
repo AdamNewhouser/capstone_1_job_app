@@ -1,7 +1,7 @@
 .ListingItem {
     width: 90%;
-    max-width: 680px;
-    margin: 20px auto;
+    max-width: 1000px;
+    margin: 75px auto;
     padding: 0 5px 15px;
     background-color: #F4BB4B;
     color: black;
@@ -42,12 +42,21 @@
     margin: 5px 15px 20px;
     padding: 0 15px 0;
 }
+
+.p_salary {
+    margin: 5px 15px 20px;
+    padding: 0 15px 0;
+}
 .h4 {
     margin: 5px 15px 5px;
     text-decoration: underline;
     padding: 0 10px 0;
     color: purple;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.applicants {
+    margin-left: 25px;
 }
 
 .list_salary {
@@ -62,6 +71,15 @@
     font-weight: lighter;
 }
 
+.edit-listing {
+    margin: 25px;
+    color: white;
+    background-color: purple;
+    border: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+}
 .apply_button {
     margin: 20px auto;
     width: 100px;
@@ -72,4 +90,25 @@
     justify-content: center;
     border: none;
     border-radius: 10px;
+}
+
+.JobItem__fa,
+.JobItem__fa_bigger {
+  display: grid;
+  place-content: center;
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+
+.JobItem__fa {
+  font-size: 1.2rem;
+}
+
+.JobItem__fa_bigger {
+  font-size: 1.5rem;
+}
+
+.JobItem__fa:hover {
+  cursor: pointer;
 }

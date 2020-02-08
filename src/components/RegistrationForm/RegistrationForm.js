@@ -31,7 +31,6 @@ export default class RegistrationForm extends Component {
             user_type: user_type.value
         })
             .then(user => {
-                console.log(user)
                 email.value = ''
                 phone.value = ''
                 user_name.value = ''

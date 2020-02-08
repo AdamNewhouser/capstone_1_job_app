@@ -1,129 +1,127 @@
-import TokenService from '../services/token-service'
-import config from '../config'
-
+import TokenService from "../services/token-service";
+import config from "../config";
 
 const ProfileApiService = {
-    getProfile(profileId, userId, userType) {
-        return fetch(`${config.API_ENDPOINT}/profiles/${profileId}`, {
-            headers: {
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-                'userType': userType,
-                'userId': userId,
-            },
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    getProfileAfterLogin(userId, userType) {
-        console.log(userId, userType)
-        return fetch(`${config.API_ENDPOINT}/profiles`, {
-            headers: {
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-                'userType': userType,
-                'userId': userId,
-            },
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    getMicroProfile(profileId) {
-        return fetch(`${config.API_ENDPOINT}/profiles/${profileId}`, {
-            headers: {
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-            },
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    getApplicants(userId) {
-        return fetch(`${config.API_ENDPOINT}/listings`, {
-            headers: {
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-                'userId': userId
-            },
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    postProfile(profile) {
-        return fetch(`${config.API_ENDPOINT}/profiles`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                profile,
-            }),
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    postEducation(profileId, education) {
-        return fetch(`${config.API_ENDPOINT}/profiles/${profileId}/education`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                education,
-            }),
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    postEmployment(profileId, employment) {
-        return fetch(`${config.API_ENDPOINT}/profiles/${profileId}/employment`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                employment,
-            }),
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    },
-    postImage(image_url, profile_id, user_id) {
-        return fetch(`${config.API_ENDPOINT}/profiles/${profile_id}/image`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                image_url,
-                profile_id,
-                user_id,
-            }),
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
-    }
-}
+  getProfile(profileId, userId, userType) {
+    return fetch(`${config.API_ENDPOINT}/profiles/${profileId}`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+        userType: userType,
+        userId: userId
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getProfileById(profileId) {
+    return fetch(`${config.API_ENDPOINT}/profiles/${profileId}`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getProfileAfterLogin(userId, userType) {
+    return fetch(`${config.API_ENDPOINT}/profiles`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+        userType: userType,
+        userId: userId
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getMicroProfile(profileId, listingId) {
+    return fetch(`${config.API_ENDPOINT}/listings/${listingId}/profiles`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+        profileId: profileId
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getApplicants(userId) {
+    return fetch(`${config.API_ENDPOINT}/listings`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+        userId: userId
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  postProfile(profile) {
+    return fetch(`${config.API_ENDPOINT}/profiles`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        profile
+      })
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  postEducation(profileId, education) {
+    return fetch(`${config.API_ENDPOINT}/profiles/${profileId}/education`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        education
+      })
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  postEmployment(profileId, employment) {
+    return fetch(`${config.API_ENDPOINT}/profiles/${profileId}/employment`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        employment
+      })
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  postImage(image_url, profile_id, user_id) {
+    return fetch(`${config.API_ENDPOINT}/profiles/${profile_id}/image`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        image_url,
+        profile_id,
+        user_id
+      })
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  updatePersonal(updatedPersonal, profile_id) {
+    return fetch(`${config.API_ENDPOINT}/profiles/${profile_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({
+        profile_id,
+        updatedPersonal
+      })
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  }
+};
 
-
-export default ProfileApiService
+export default ProfileApiService;
