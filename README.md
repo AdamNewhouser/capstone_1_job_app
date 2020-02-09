@@ -28,6 +28,10 @@ Summary:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Screens:
+
+![job-app-landing](https://user-images.githubusercontent.com/53315616/74110917-72028c00-4b5e-11ea-9b09-8028dda88439.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
