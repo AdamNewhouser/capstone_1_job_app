@@ -1,6 +1,9 @@
 ## Job App
 
 live-app: https://job-app.adamnewhouser.now.sh
+
+client repo: https://github.com/AdamNewhouser/capstone_1_job_app
+
 server repo: https://github.com/AdamNewhouser/capstone_1_job_app_api
 
 Demo Accounts:
@@ -14,21 +17,6 @@ Demo Accounts:
         password: dundermifflinpassword123
 
 
-API Documentation:
-
-    API Base URL: https://dry-inlet-84566.herokuapp.com/api
-
-    - GET /profiles
-    - GET /listings
-    - GET /listings/{listing-id}
-    - POST /users
-    - POST /auth/login
-    - POST /listings
-    - POST /listings/{listing-id}
-    - POST /profiles/{profile-id}
-    - POST /profiles/{profile-id}/{profile-image}
-    - POST /profiles/{profile-id}/employment
-    - POST /profiles/{profile-id}/education
 
 Summary:
 
